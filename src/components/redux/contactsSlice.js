@@ -4,12 +4,11 @@ import { initialContacts } from './constants';
 
 const contactsSlice = createSlice({
   name: 'contacts',
-  initialState: initialContacts,
+  initialState: { items: initialContacts },
   reducers: {
     addContact: {
       reducer(contacts, action) {
-        // console.log(contacts);
-        contacts.push(action.payload);
+        contacts.items.push(action.payload);
       },
       prepare({ name, number }) {
         return {
@@ -23,12 +22,10 @@ const contactsSlice = createSlice({
     },
     delContact: {
       reducer(contacts, action) {
-        // return contacts.filter(contact => contact.id !== action.payload);
-        // contacts.splice(action.payload, 1);
-        const index = contacts.findIndex(
+        const index = contacts.items.findIndex(
           contact => contact.id === action.payload
         );
-        contacts.splice(index, 1);
+        contacts.items.splice(index, 1);
       },
     },
   },

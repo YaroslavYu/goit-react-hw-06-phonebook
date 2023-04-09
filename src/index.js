@@ -6,7 +6,7 @@ import { GlobalStyle } from './GlobalStyles';
 // new
 // import {store}
 import { Provider } from 'react-redux';
-import store from 'components/redux/store';
+import { store } from 'components/redux/store';
 import { persistor } from 'components/redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
 //

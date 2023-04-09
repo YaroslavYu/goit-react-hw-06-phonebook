@@ -1,8 +1,8 @@
+import { useSelector, useDispatch } from 'react-redux';
+
 import { StyledFilter } from './phonebook.styled';
 
 import { addFilter } from './redux/filterSlice';
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
 import { getFilter } from './redux/selectors';
 
 export function Filter() {
@@ -18,7 +18,7 @@ export function Filter() {
         onChange={e => {
           dispatch(addFilter(e.target.value));
         }}
-        // value={filter}
+        value={filter}
       />
     </label>
   );
